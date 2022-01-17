@@ -10,7 +10,7 @@ function Listing() {
     const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movie?size=12&page=0`)
+        axios.get(`${BASE_URL}/movie?size=12&page=0`)  
         .then(response => {
             const data = response.data as MoviePage;
             setPageNumber(data.number);
@@ -19,6 +19,7 @@ function Listing() {
 
     return (
         <>
+            <p>{pageNumber}</p>
             <Paginaion />
 
             <div className="container">
